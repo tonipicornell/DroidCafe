@@ -45,22 +45,12 @@ public class ShoppingCart extends AppCompatActivity {
             }
         });
 
-        String donutCart = getIntent().getStringExtra("donut_ordered");
+        String cartMessage = getIntent().getStringExtra("cart_message");
 
-        if (donutCart != null) {
-            informationCart.setText(donutCart);
-        }
-
-        String iceCreamCart = getIntent().getStringExtra("ice_cream_ordered");
-
-        if (iceCreamCart != null) {
-            informationCart.setText(iceCreamCart);
-        }
-
-        String froyoCart = getIntent().getStringExtra("froyo_ordered");
-
-        if (froyoCart != null) {
-            informationCart.setText(froyoCart);
+        if (cartMessage != null && !cartMessage.isEmpty()) {
+            informationCart.setText(cartMessage);
+        } else {
+            informationCart.setText("No items added to the shopping cart");
         }
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.phone_types, android.R.layout.simple_spinner_item);

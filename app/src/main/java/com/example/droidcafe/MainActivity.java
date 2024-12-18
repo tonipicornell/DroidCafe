@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton buttonFloatCart;
     private ImageButton optionsButton;
 
+    private String selectedMessage = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,27 +58,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
         donuts.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ShoppingCart.class);
-            intent.putExtra("donut_ordered", "You ordered a donut.");
-            startActivity(intent);
+            selectedMessage = "You ordered a donut";
+            Toast.makeText(this, "You ordered a donut", Toast.LENGTH_SHORT).show();
         });
 
         iceCream.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ShoppingCart.class);
-            intent.putExtra("ice_cream_ordered", "You ordered a ice cream.");
-            startActivity(intent);
+            selectedMessage = "You ordered a ice cream";
+            Toast.makeText(this, "You ordered an ice cream sandwich", Toast.LENGTH_SHORT).show();
         });
 
         froYo.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ShoppingCart.class);
-            intent.putExtra("froyo_ordered", "You ordered a Fro Yo.");
-            startActivity(intent);
+            selectedMessage = "You ordered a fro yo";
+            Toast.makeText(this, "You ordered a fro yo", Toast.LENGTH_SHORT).show();
         });
 
         buttonFloatCart.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ShoppingCart.class);
+            intent.putExtra("cart_message", selectedMessage);
             startActivity(intent);
         });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
