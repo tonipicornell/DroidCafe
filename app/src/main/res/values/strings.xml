@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Droid Cafe</string>
+    <string name="toolbar_title">Cart</string>
+    <string name="name">Name:</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="address">Address:</string>
+    <string name="enter_address">Enter address</string>
+    <string name="phone">Phone:</string>
+    <string name="enter_phone">Enter phone</string>
+    <string name="note">Note:</string>
+    <string name="enter_note">Enter note</string>
+    <string name="delivery_method">Choose a delivery method:</string>
+    <string name="service">Same day messenger service</string>
+    <string name="ground_delivery">Next day ground delivery</string>
+    <string name="pick_up">Pick up</string>
+
+    <string-array name="phone_types">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="options">
+        <item>Order</item>
+        <item>Status</item>
+        <item>Favorites</item>
+        <item>Contact</item>
+    </string-array>
+</resources>

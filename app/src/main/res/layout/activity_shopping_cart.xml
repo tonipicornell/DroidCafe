@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingCart">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarShopping"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Order Activity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/informationCart"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarShopping"
+        android:layout_margin="20dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarShopping" />
+
+    <LinearLayout
+        android:id="@+id/information_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/informationCart"
+        android:layout_marginStart="20dp">
+
+        <LinearLayout
+            android:id="@+id/information_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"/>
+
+            <EditText
+                android:id="@+id/enter_name"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_name"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/information_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address" />
+
+            <EditText
+                android:id="@+id/enter_address"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_address"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/information_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone" />
+
+            <EditText
+                android:id="@+id/enter_phone"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_phone"
+                android:inputType="phone"/>
+
+            <Spinner
+                android:id="@+id/phone_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/information_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note"/>
+
+            <EditText
+                android:id="@+id/enter_note"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_note" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/delivery_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/information_user"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delivery_method"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/messenger_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/service"/>
+
+        <RadioButton
+            android:id="@+id/next_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ground_delivery"/>
+
+        <RadioButton
+            android:id="@+id/pick_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_up"/>
+    </RadioGroup>
+
+</RelativeLayout>
